@@ -3,35 +3,23 @@
 let account;
 const connectMetamask = async () => {
 
+if (window.ethereum) {
+  handleEthereum();
+} else {
+  window.addEventListener('ethereum#initialized', handleEthereum, {
+    once: true,
+  });
 
-  const provider = await detectEthereumProvider();
-
-
-
-    if (provider) {
-    // handle provider
-    handleEthereum()
-  } else {
-    // handle no provider
-  }
-
-
-
-// if (window.ethereum) {
-//   handleEthereum();
-// } else {
-//   window.addEventListener('ethereum#initialized', handleEthereum, {
-//     once: true,
-//   });
-
-//   // If the event is not dispatched by the end of the timeout,
-//   // the user probably doesn't have MetaMask installed.
-//   setTimeout(handleEthereum, 3000); // 3 seconds
-// }
+  // If the event is not dispatched by the end of the timeout,
+  // the user probably doesn't have MetaMask installed.
+  setTimeout(handleEthereum, 3000); // 3 seconds
 }
 
 
+}
 
+
+connectMetamask();
 async function handleEthereum() {
   const { ethereum } = window;
   if (ethereum && ethereum.isMetaMask) {
@@ -156,20 +144,43 @@ const connectContract = async () => {
 
 
 const sendCrypto = async () => {
+  // Check if the ethereum object is available
+  if (window.ethereum) {
+    // Request account access
+    try {
+      await window.ethereum.request({ method: 'eth_requestAccounts' });
+    } catch (error) {
+      console.error(error);
+    }
 
-await connectMetamask();
-    console.log(await window.contract.methods);
+    // Calculate recommended gas limit based on current gas prices and complexity of the transaction
+    const gasPrice = await window.ethereum.eth.getGasPrice();
+    const estimatedGas = await window.contract.methods.enter().estimateGas();
+    const recommendedGasLimit = gasPrice.mul(estimatedGas).mul(1.1); // Add 10% buffer
 
+    // Get the current account
+    const accounts = await window.ethereum.eth.getAccounts();
+    const account = accounts[0];
 
+    // Create the transaction parameters
     let transactionParam = {
-        to: '0x95072EB497244b5a13f012D88be48E4e8b37AeE8',
-        from: account,
-        value: '1000000000000000000',
-        gas: '21000'
+      to: '0x95072EB497244b5a13f012D88be48E4e8b37AeE8',
+      from: account,
+      value: '1000000000000000000',
+      gas: recommendedGasLimit
     };
 
-    await window.contract.methods.enter().send(transactionParam);
+    // Execute the transaction
+    try {
+      await window.contract.methods.enter().send(transactionParam);
+    } catch (error) {
+      console.error(error);
+    }
+  } else {
+    console.error('Ethereum provider not found');
+  }
 }
+
 
 
 

@@ -72,43 +72,53 @@
          width: 100%;
          }
       </style>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
    </head>
    <body>
       <!-- Responsive navbar-->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
          <div class="container px-5">
-            <a class="navbar-brand" href="#!">MR AIRDROP</a>
+            <a class="navbar-brand" href="/">
+            <img class="img-fluid rounded mb-lg-0 mx-auto coin-icon" src="/assets/images/coin_design/coin_design.png" alt="Mr Airdrop" width="52" style="padding-right:4px;" />
+            MR AIRDROP</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                   <li cla ss="nav-item">
-                     <a class="nav-link" href="#!">TELEGRAM</a>
+                     <a class="nav-link" href="/airdrops">AIRDROPS</a>
+                  </li>
+                     <li cla ss="nav-item">
+                     <a class="nav-link" href="/about">ABOUT</a>
+                  </li>
+                       <li cla ss="nav-item">
+                     <a class="nav-link" href="/news">NEWS</a>
+                  </li>
+                  <li cla ss="nav-item">
+                     <a class="nav-link" href="/aitoolkit_text">AI TEXT</a>
+                  </li>
+                  <li cla ss="nav-item">
+                     <a class="nav-link" href="/aitoolkit_images">AI images</a>
                   </li>
                   <li class="nav-item">
-                     <button class="button-6 wallet-connect" onclick="connectMetamask()">CONNECT TO METAMASK</button>  
+                     <button class="button-6 wallet-connect" onclick="connectMetamask()">CONNECT TO METAMASK</button>
                   </li>
                </ul>
+
             </div>
          </div>
       </nav>
       <!-- Page Content-->
       <div class="container px-4 px-lg-5">
       <!-- Heading Row-->
-      <div class="row gx-4 gx-lg-0 align-items-center hero-block">
-         <div id="qrcode" class="col-lg-7">
-            <!-- <h1>Mr Airdrop</h1> -->
-         </div>
-         <div class="col-lg-5">
-            <!-- <p id="welcome"> </p>       -->
-            <p id="accountArea">WALLET NOT CONNECTED</p>
-         </div>
-      </div>
+
       <!-- Call to Action-->
       <div class="card text-white bg-dark bg-gradient my-5 py-4 text-center slide-wrapper">
          <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">
-            <div class="parallax-bg" style="background-image: url(/assets/shutterstock_708399292.jpg); "data-swiper-parallax="-23%"></div>
+            <div class="parallax-bg" style="background-image: url(/assets/images/shutterstock_708399292.jpg); "data-swiper-parallax="-23%"></div>
             <div class="swiper-wrapper">
                <div class="swiper-slide">
                   <div class="title" data-swiper-parallax="-300">WELCOME</div>
@@ -119,25 +129,30 @@
                         <p class="text-white m-0 ">Click the button below to our whitelist for our airdrop. Registration is only 1 Matic. All participants will receive an airdrop of our next IDO </p>
                         <p class="text-white m-0 ">All entries will receive an airdrop of the ADN token.</p>
                         <p class="text-white m-0 ">Only 1000 whitelist spots will be available</p>
+                        <p class="text-white m-0 ">Join our     <a class="nav-link" href="https://t.me/misterairdropper">TELEGRAM</a>Group to keep uptodate with latest info.</p> 
+
                         <div id="timer3"></div>
                         <div id="middlebuttons" class="btn-wrapper">
                            <!-- <button class="button-6" onclick="connectContract()"  >Authorize Contract</button>  -->
                            <button class="button-6"onclick="sendCrypto()" id="send-button-txt" >Connect Wallet to Enter Whitelist</button>
-                           <!--     <p id="copy-text" class="text-break copy-text">0xF56Fc333f9962f9d3c0DE0e472C60388bf58bf7c</p>
-                              -->
+                  
                         </div>
                         <p class="text-white m-0 ">In the meantime take a look at the projects being incubated </p>
                      </div>
                   </div>
                </div>
                <div class="swiper-slide">
-                  <div class="title" data-swiper-parallax="-300">TIGER SOUL</div>
-                  <div class="subtitle" data-swiper-parallax="-200">NFT</div>
+                  <div class="title" data-swiper-parallax="-300">AI Toolkit</div>
+                  <div class="subtitle" data-swiper-parallax="-200">Ordered Singularity</div>
                   <div class="text" data-swiper-parallax="-100">
                      <p>
-                        Checkout Tiger soul NFT, Minting takes place soon.
+                        Have a look at our tools to create an essay outline, convert notes to summary or to create images from text with our preconfigured themes
                      </p>
-                     <a href="/tigersoul"> <button class="button-6">MINT NFT</button></a>
+                        <p>
+                        Once finished you can convert to audio.
+                     </p>
+                     <a href="/aitoolkit_images"> <button class="button-6">AI Art</button></a>
+
                   </div>
                </div>
                <div class="swiper-slide">
@@ -158,115 +173,49 @@
             <div class="swiper-pagination"></div>
          </div>
       </div>
-      <!-- Content Row-->
-      <div class="row gx-4 gx-lg-5">
-         <div class="col-md-4 mb-5">
-            <div class="card h-100 container-card-body">
-               <div class="card-body">
-                  <h2 class="card-title ">Tiger SOL</h2>
-                  <p class="card-text commaSeparated"> This NFT Project Will be launching on the Polygon block chain. It sole purpuse is to build up a community thay wants to preserve the Tigers of the world. </p>
-                  <p class="card-text commaSeparated"> Mint your NFT and help the tigers of the world. </p>
-               </div>
-               <img class="img-fluid rounded mx-auto d-block " width="200" src="/assets/0.png" />
-               <div class="card-footer bg-light bg-gradient">
-                  <div id="timer0"></div>
-                  <a href="/tigersoul"> <button class="button-6">Mint NFT</button></a>
-               </div>
-            </div>
+
+            <div class="row gx-4 gx-lg-0 align-items-center hero-block">
+         <div id="qrcode" class="col-lg-7">
+      
+            <p id="welcome"> </p>   
+                <p id="accountArea">WALLET NOT CONNECTED</p>
          </div>
-         <div class="col-md-4 mb-5">
-            <div class="card h-100 ">
-               <div class="card-body">
-                  <h2 class="card-title">Crypto School</h2>
-                  <p class="card-text commaSeparated"> This Course will take you through the basics of crypto. </p>
-                  <p class="card-text commaSeparated"> It is important to understand the technology behind the assets you are investing in. </p>
-                  <img width="120" class="img-fluid rounded mx-auto d-block image" src="/assets/cryptoskool.png" />
-                  <p class="card-text commaSeparated">Join the whitelist to get a free airdrop of tokens that you can use on the platform.</p>
-                  <p class="card-text commaSeparated">This is not a get rich quick scheme that main aim is education</p>
-                  <!-- <a href="">Take Quiz</a> -->
-               </div>
-               <div class="card-footer">
-                  <div id="timer1"></div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-4 mb-5">
-            <div class="card h-100">
-               <div class="card-body image">
-                  <h2 class="card-title ">Operation BlackBeard</h2>
-                  <p class="card-text commaSeparated"> This NFT project is tied to a beard oil company and mens mental health. Keep a look out for this project </p>
-                  <!-- <img width="200"src="/assets/OBB.jpg"/> -->
-                  <img class="img-fluid rounded mx-auto d-block image" src="/assets/NFTOBB.jpg" />
-               </div>
-               <div class="card-footer bg-light bg-gradient">
-                  <div id="timer2"></div>
-                  <a href="https://operation-blackbeard.ew.r.appspot.com/"><button class="button-6">Visit Site</button></a>
-               </div>
-            </div>
+         <div class="col-lg-5">
+               
+        
          </div>
       </div>
       <!-- Content Row-->
-      <div class="row gx-4 gx-lg-5">
-         <div class="col-md-4 mb-5">
-            <div class="card h-100 container-card-body">
-               <div class="card-body image">
-                  <h2 class="card-title ">GOS Protocol</h2>
-                  <p class="card-text commaSeparated"> This a new blockchiain powered by Gold and Silver. They will issue govenment backed gold and silver coins.</p>
-                  <img class="img-fluid rounded mx-auto d-block image" src="/assets/gos-logo.png" />
-                  <p class="card-text commaSeparated"> Coin Sacrafice comming soon</p>
-               </div>
-               <div class="middle">
-                  <a href="/assets/GOS-Blockchain-Lite_Paper.pdf">
-                     <div class="text bg-dark bg-gradient">White Paper</div>
-                  </a>
-               </div>
-               <div class="card-footer bg-light bg-gradient">
-               </div>
-            </div>
-         </div>
-         <div class="col-md-4 mb-5">
-            <div class="card h-100 container-card-body">
-               <div class="card-body image">
-                  <h2 class="card-title ">Cryptocade</h2>
-                  <p class="card-text commaSeparated"> This games arcade bringing you an array of games available across diffrent platforms </p>
-                  <img width="200" class="img-fluid rounded mx-auto d-block image" src="/assets/cryptocade.png" />
-                  <p class="card-text commaSeparated"> Stay tuned for more information </p>
-               </div>
-               <div class="middle">
-                  <div class="text bg-dark bg-gradient">Comming Soon</div>
-               </div>
-               <div class="card-footer bg-light bg-gradient btn-wrapper">
-                  <!--          <div class="btn-wrapper"><button  class="button-6 comming-soon" role="button">Play</button><div class="tooltip-wrapper"><button class="button-6" onclick="copyTextDiv('copy-text2','copy-tooltip2')" onmouseout="outText('copy-tooltip2')"><span class="tooltiptext " id="copy-tooltip2">Copy</span></button></div></div> -->
-               </div>
-            </div>
-         </div>
-         <div class="col-md-4 mb-5">
-            <div class="card h-100 container-card-body">
-               <div class="card-body image">
-                  <h2 class="card-title ">Crypto Toolkit</h2>
-                  <p class="card-text commaSeparated"> This platform will provide to essentual crypto tools to keep in your back pocket</p>
-                  <img width="200" class="img-fluid rounded mx-auto d-block image" src="/assets/cryptotoolkit.png" />
-                  <p class="card-text commaSeparated"> Stay tuned for more information </p>
-               </div>
-               <div class="middle">
-                  <div class="text bg-dark bg-gradient">Comming Soon</div>
-               </div>
-               <div class="card-footer bg-light bg-gradient btn-wrapper">
-               </div>
-            </div>
-         </div>
-      </div>
+      <!-- include when api has been changed to other site  -->
+       <!--    <div class="row gx-4 gx-lg-5 body-row">
+          </div> -->
+
+<div class="row gx-4 gx-lg-5 body-row"><div class="col-md-4 mb-5"><div class="card h-100 "><div class="card-body"><h2 class="card-title projects-title">AI Toolkit</h2><img width="120" class="img-fluid rounded mx-auto d-block image project-image" src="https://dev-juicywalnutapi.pantheonsite.io//sites/default/files/2023-01/Screenshot%202023-01-01%20at%2021.22.44_0.png"><p class="card-text commaSeparated projects-body"> </p><p>Welcome to our<a href="https://mrairdrop.com/ai_toolkit_text"> </a><a href="https://mrairdrop.com/ai_toolkit_text">AI tool platform!</a> We're here to help you take your projects to the next level with the power of artificial intelligence. Our platform offers a variety of tools and features to enhance your work and make your life easier. From keyword extraction to image generation and audio synthesis, we've got you covered. Our user-friendly interface and intuitive design make it easy to get started, so you can focus on what matters most: your work. So whether you're a developer, a researcher, or just someone looking to expand your AI toolkit, our platform is here to help you succeed.</p><p></p></div></div></div><div class="col-md-4 mb-5"><div class="card h-100 "><div class="card-body"><h2 class="card-title projects-title">GOS Protocol</h2><img width="120" class="img-fluid rounded mx-auto d-block image project-image" src="https://dev-juicywalnutapi.pantheonsite.io//sites/default/files/2022-11/gos-logo.png"><p class="card-text commaSeparated projects-body"> </p><p>This a new blockchain powered by Gold and Silver. They will issue government backed gold and silver coins.</p><p></p></div></div></div><div class="col-md-4 mb-5"><div class="card h-100 "><div class="card-body"><h2 class="card-title projects-title">Crypto Skool</h2><img width="120" class="img-fluid rounded mx-auto d-block image project-image" src="https://dev-juicywalnutapi.pantheonsite.io//sites/default/files/2022-11/cryptoskool_0.png"><p class="card-text commaSeparated projects-body"> </p><p>This Course will take you through the basics of crypto.</p>
+
+<p>It is important to understand the technology behind the assets you are investing in.</p>
+
+<p>Join the whitelist to get a free airdrop of tokens that you can use on the platform.</p>
+
+<p>This is not a get rich quick scheme the main aim is education.</p><p></p></div></div></div></div>
+
+
       <!-- Footer-->
       <footer class="py-5 bg-dark">
          <div class="container px-4 px-lg-5">
-            <p class="m-0 text-center text-white">Copyright &copy; AirDrop Nation 2022</p>
+  <!--           <ul>
+            <li cla ss="nav-item">
+            <a class="nav-link" href="https://t.me/misterairdropper">TELEGRAM</a>
+            </li>
+            </ul> -->
+            <p class="m-0 text-center text-white">Copyright &copy;mrairdrop.com 2022</p>
          </div>
       </footer>
       <!-- Bootstrap core JS-->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
       <!-- Core theme JS-->
+      
+      <script type="text/javascript" src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
-      <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
       <script src="/scripts.js"></script>
